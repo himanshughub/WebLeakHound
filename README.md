@@ -19,13 +19,13 @@ Findings are severity-ranked (Critical / High / Medium / Low) and exported to a 
 
 Download the script and run it with PowerShell 7+ (pwsh) for parallel probing:
 
-```pwsh -ExecutionPolicy Bypass -File .\WebLeakHound.ps1 -Domain <enter-your-organization-domain-here> -Path .\endpoints.txt -ThrottleLimit 60 -ShowValue```
+```bash pwsh -ExecutionPolicy Bypass -File .\WebLeakHound.ps1 -Domain <enter-your-organization-domain-here> -Path .\endpoints.txt -ThrottleLimit 60 -ShowValue```
 
 It will enumerate active-cert subdomains under your organization root domain, probe each host, and write the reports to the current folder. For the Excel report, install the one-time dependency:
 
 # Dependency for excel report:
 
-```Install-Module ImportExcel -Scope CurrentUser```
+```bash Install-Module ImportExcel -Scope CurrentUser```
 
 Running with powershell (Windows PowerShell 5.1) still works but runs sequentially — use pwsh to get parallel scanning.
 
